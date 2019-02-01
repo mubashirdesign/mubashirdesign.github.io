@@ -1,12 +1,13 @@
 .container {
+    background-image: linear-gradient(to right bottom, #ffffff, #ffffff);
     display: grid;
     grid-template-columns: [sidebar-start] 20% [sidebar-end container-start] 1fr [container-end];
-    grid-template-rows: [header-start] 20vh [header-end] 70vh;
+    grid-template-rows: [header-start] 20vh [header-end] 50vh;
     grid-row-gap: 10vh;
 
     @media only screen and (max-width: $bp-medium){
         grid-template-rows: [header-start] 40% [header-end container-start] repeat(3, 10rem);
-        grid-template-columns: 100vw;
+        grid-template-columns: 1fr;
     }
    
 

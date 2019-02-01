@@ -1,4 +1,14 @@
-{
+{	"plugins": [
+	["prismjs", {
+		"languages": [
+		  "json"
+		],
+		"plugins": ["line-numbers"],
+		"theme": "coy",
+		"css": true
+	}]
+  ],
+	
 	"presets": [
 
 		["env", {
