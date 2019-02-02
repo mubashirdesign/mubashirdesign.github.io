@@ -6,7 +6,7 @@
    
 
     @media only screen and (max-width: $bp-medium){
-        grid-template-rows: [header-start] 40% [header-end container-start] repeat(3, 10rem);
+        grid-template-rows: [header-start] 40% [header-end container-start] 1fr;
         grid-template-columns: 1fr;
     }
    
