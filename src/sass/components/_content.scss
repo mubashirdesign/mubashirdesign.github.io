@@ -1,18 +1,23 @@
 .content {
     display: grid;
-    grid-template-columns: 70% 1fr;
-    grid-row: header-end / -1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-row: 1 / -1;
     padding: 3rem;
 
-    p {
-        font-size: 1.3rem;
-    }
+    align-items: center;
+   
+    
     @media only screen and (max-width: $bp-medium){
         grid-column: 1 / 5;
         grid-row: container-start / -1;
        
     }
     
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 20vw;
+    }
     
 
     &__cards {
@@ -37,11 +42,46 @@
         }
     }
     &__summary {
-        text-align: justify;
-        padding: 2rem;
+        margin: 2rem;
+        display: grid;
+        // grid-template-columns: 1fr 1fr;
+        // grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        border: 10px solid $wb-bdr-color;
+        box-shadow: inset -1px 2px 2px $wb-shadow, 6px 9px 1px rgba(0, 0, 0, 0.1);
+        background-color: $wb-color;
+        height: 50vh;
+        &--box {
+           border: 1px solid grey;
+           padding: 2rem;
+
+        }
+
+    
+        p {
+            font-family: 'Indie Flower', cursive;
+        }
+
+        h3 {
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Indie Flower', cursive;  
+            
+            
+        }
+
+        span {
+            color: red;
+        }
+
+
+
     }
 
-    &__skills {
+    &__JSON {
 
         &--icon {
             width: 4rem;
@@ -55,11 +95,13 @@
           
         }
         
-        grid-row: 1 / -1;
-        grid-column: 2 / 3;
+        // grid-row: 1 / -1;
+        // grid-column: 2 / 3;
         display: grid;
         grid-gap: 1rem;
  
         
     }
+
+
 }

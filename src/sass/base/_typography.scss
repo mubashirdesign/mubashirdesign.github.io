@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 @import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 
 .header-h1 {
     font-family: 'Russo One', sans-serif;
@@ -8,14 +9,17 @@
     @media only screen and (max-width: $bp-medium){
         font-size: 3rem;
         }
-    
+
 }
 
 .header-h2 {
     font-family: 'Exo 2', sans-serif;
 }
 
-p, a {
+p, a, h3 {
     font-family: 'Exo 2', sans-serif;
-    
+}
+
+p {
+    font-size: 1.3rem;
 }
