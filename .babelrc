@@ -4,7 +4,7 @@
 		  "json"
 		],
 		"plugins": ["line-numbers"],
-		"theme": "coy",
+		"theme": "okaidia",
 		"css": true
 	}]
   ],

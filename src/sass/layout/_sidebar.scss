@@ -2,25 +2,25 @@
     background-position: 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: linear-gradient(rgba(8, 7, 76, 0.8), rgba(8, 7, 76, 0.8)), url(/img/cntower.jpg);
+    background-image: linear-gradient( rgba(8, 7, 76, 0.8),rgba(8, 7, 76, 0.8)), url(/img/cntower.jpg);
     grid-row: 1 / 5;
     display: grid;
     text-align: center;
-    align-items: start;
+    align-items: center;
     grid-row-gap: 1rem;
     grid-template-rows: repeat(4, min-content);
+ 
 
     @media only screen and (max-width: $bp-medium){
         grid-column: 1 / 5;
-        grid-row: header-start / header-end;
+        grid-row: 1 / 2;
     }
 
 
     &__portrait {
-        width: 80%;
+        width: 100%;
         margin-top: 2rem;
         padding: 1rem;
-        border-radius: 50%;
         align-self: end;
         justify-self: center;
 
@@ -113,10 +113,10 @@
     &__navigation {
 
         @media only screen and (max-width: $bp-medium){
-        display: flex;
         grid-column: 1 / -1;
         grid-row: 5 / 6;
         align-self: end;
+        display: none;
         }
     
     }

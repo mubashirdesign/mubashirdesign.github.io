@@ -1,107 +1,16 @@
 .content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    grid-row: 1 / -1;
-    padding: 3rem;
-
-    align-items: center;
-   
-    
-    @media only screen and (max-width: $bp-medium){
-        grid-column: 1 / 5;
-        grid-row: container-start / -1;
-       
-    }
-    
-    &__header {
-        display: grid;
-        grid-template-columns: 1fr 20vw;
-    }
-    
-
-    &__cards {
-        display: grid;      
-        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-        grid-gap: 4rem;
-        padding: 4rem;
-
-
-    }
-
-    &__box {
-        background-color: orangered;
-        height: 30rem;
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-        box-shadow: 0 0rem 5rem rgba(#000, .40);
-        img {
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-            width: 100%;
-        }
-    }
-    &__summary {
-        margin: 2rem;
-        display: grid;
-        // grid-template-columns: 1fr 1fr;
-        // grid-template-rows: 1fr 1fr;
-        align-items: center;
-        justify-content: center;
-        border-radius: 5px;
-        border: 10px solid $wb-bdr-color;
-        box-shadow: inset -1px 2px 2px $wb-shadow, 6px 9px 1px rgba(0, 0, 0, 0.1);
-        background-color: $wb-color;
-        height: 50vh;
-        &--box {
-           border: 1px solid grey;
-           padding: 2rem;
-
-        }
-
-    
-        p {
-            font-family: 'Indie Flower', cursive;
-        }
-
-        h3 {
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Indie Flower', cursive;  
-            
-            
-        }
-
-        span {
-            color: red;
-        }
-
-
-
-    }
 
     &__JSON {
+        
+   height: 100%;
 
-        &--icon {
-            width: 4rem;
-            height: 4rem;   
-            transition: all 0.2s;
-         
-
-            &:hover {
-                transform: scale(1.1);
-            }
-          
+        @media only screen and (max-width: $bp-medium){
+       
         }
-        
-        // grid-row: 1 / -1;
-        // grid-column: 2 / 3;
-        display: grid;
-        grid-gap: 1rem;
- 
-        
     }
+    
+  
 
 
 }
+
