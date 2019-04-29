@@ -2,6 +2,7 @@
 // IMPORT THE CSS FILE into the main app JS or else the CSS file wont generate when npm build is run
 import '../sass/main.scss';
 
+history.replaceState(null, null, ' ');
 
 document.querySelector('.index__front--btn').addEventListener('click', () => {
     document.querySelector('.index__front').classList.add("flip-180");
