@@ -10,7 +10,7 @@ document.querySelector('.index__front--btn').addEventListener('click', () => {
 }
 )
 
-const baseURI = "http://localhost:1234/";
+const baseURI = window.location.href;
 
 window.addEventListener("hashchange" , e => {
 
