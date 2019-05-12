@@ -10,6 +10,12 @@
         align-items: center;
         width: max-content;
         box-shadow: 1px 1rem 0rem rgba(0,0,0,.8);
+        transition: all .3s;
+
+        &:hover {
+            transform: translateY(-1rem);
+            box-shadow: 1px 3rem 1rem rgba(0,0,0,.8)
+        }
 
     }
 

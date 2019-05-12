@@ -4,11 +4,11 @@ import '../sass/main.scss';
 
 history.replaceState(null, null, ' ');
 
-document.querySelector('.index__front--btn').addEventListener('click', () => {
-    document.querySelector('.index__front').classList.add("flip-180");
-    document.querySelector('.index__back').classList.add("flip-reset");
-}
-)
+// document.querySelector('.index__front--btn').addEventListener('click', () => {
+//     document.querySelector('.index__front').classList.add("flip-180");
+//     document.querySelector('.index__back').classList.add("flip-reset");
+// }
+// )
 
 const baseURI = window.location.href;
 

@@ -45,7 +45,7 @@
     }
     &__link {
 
-        @media only screen and (max-width: $bp-small){
+        @media only screen and (max-width: $bp-medium){
             justify-content: center;
         }
         &--icon {
@@ -53,13 +53,13 @@
             height: 2rem;
             margin-right: 1rem;
             fill: currentColor;
-            @media only screen and (max-width: $bp-small){
+            @media only screen and (max-width: $bp-medium){
                 margin-right: 0rem;
             }
         }
 
         &--text {
-            @media only screen and (max-width: $bp-small){
+            @media only screen and (max-width: $bp-medium){
                 visibility: hidden;
                 width: 0;
                 height: 0;
