@@ -2,7 +2,8 @@
 path: "/ethical-it"
 title: "Ethical IT"
 type: "portfolio"
-date: "2016 - 2018"
+timeline: "2016 - 2018"
+date: "2019-20-11"
 ---
 
 Provided web development consulting for clients on business solutions
@@ -12,7 +13,6 @@ Built custom web applications based on client requirements utilizing
 frameworks such as React and Redux.
 
 </br>
-
 
 Ensure all web site development follows W3C web standards and AODA
 compliance for accessibility and other good practices for web design and

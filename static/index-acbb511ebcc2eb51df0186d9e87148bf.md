@@ -3,7 +3,7 @@ path: "/1"
 title: "Dealing with website requests from small-timers"
 type: "blog"
 featuredImage: "shopifyazure.png"
-
+date: "2019-12-21"
 excerpt: "As a web developer you'll always be challenged with requests from friends and family to create sites for them, unfortunately they aren't the people with money but they do present opportunities so how would you capitlize on that without sacrificing time and money"
 ---
 
