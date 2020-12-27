@@ -1,2 +1,0 @@
-# mubashirdesign.github.io
-Portfolio.
