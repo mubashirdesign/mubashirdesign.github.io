@@ -1,0 +1,674 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+// Data
+const SITES = [
+  { name: 'ISSCA', url: 'issca.org', color: '#1a3a5c', scope: 'Automotive Club · Full Build' },
+  { name: 'Clear Image Automotive', url: 'clearimageautomotive.com', color: '#1c1c1c', scope: 'Auto Parts Store · Ecommerce' },
+  { name: 'Archer Traffic', url: 'archertraffic.ca', color: '#2d4a2d', scope: 'Traffic Management · Corporate' },
+  { name: 'Pratts Lawn Care', url: 'prattslawncare.com', color: '#2d5a1e', scope: 'Lawn Care · Lead Gen' },
+  { name: 'Element Square', url: 'elementsquare.com', color: '#3d2d5a', scope: 'Patio Furniture · Ecommerce' },
+  { name: 'Walsingham Food Market', url: 'walsinghamfoodmarket.com', color: '#5a3d1e', scope: 'Local Market · Ecommerce' },
+  { name: 'Destiny Graphics', url: 'destinygraphics.ca', color: '#4a1a3d', scope: 'Design Studio · Portfolio' },
+  { name: 'Bramur', url: 'bramur.com', color: '#1a2d4a', scope: 'Construction · Corporate' },
+];
+
+const SERVICES = [
+  { title: 'Custom Shopify Themes', desc: 'Bespoke themes built from scratch—no bloated page builders, no compromises on performance.', tag: 'THEME_DEV' },
+  { title: 'App & API Integrations', desc: 'Seamless connections between Shopify and your existing tools—ERP, CRM, 3PL, you name it.', tag: 'INTEGRATIONS' },
+  { title: 'Migration & Replatforming', desc: 'Move from WooCommerce, Magento, or custom stacks to Shopify without losing a single order.', tag: 'MIGRATION' },
+  { title: 'Conversion Optimization', desc: 'Data-driven UX improvements that turn browsers into buyers. Speed, A/B tests, analytics.', tag: 'CRO' },
+  { title: 'Ongoing Retainers', desc: 'Your dedicated dev team on call. New features, bug fixes, seasonal campaigns—handled.', tag: 'RETAINER' },
+];
+
+const PROCESS = [
+  { step: '01', title: 'Discovery', desc: 'We audit your current setup, understand goals, and map out the technical requirements.' },
+  { step: '02', title: 'Architecture', desc: 'System design, tech stack decisions, and a detailed build plan with milestones.' },
+  { step: '03', title: 'Build', desc: 'Iterative development with weekly demos. You see progress, not just promises.' },
+  { step: '04', title: 'Launch & Scale', desc: 'Deployment, monitoring, and continuous optimization as your business grows.' },
+];
+
+const STATS = [
+  { value: '50+', label: 'Stores Launched', sub: 'since 2018' },
+  { value: '99.8%', label: 'Uptime Average', sub: 'last 12 months' },
+  { value: '<2s', label: 'Avg Load Time', sub: 'mobile LCP' },
+  { value: '4.9/5', label: 'Client Rating', sub: '38 reviews' },
+];
+---
+
+<Layout>
+  <Nav />
+  <main>
+    <!-- Topbar -->
+    <div class="d3-topbar">
+      <span class="d3-topbar-status"><span class="d3-topbar-dot"></span> Available for new projects</span>
+      <span class="d3-topbar-clock" id="utc-clock"></span>
+    </div>
+
+    <!-- Hero -->
+    <section class="section d3-hero">
+      <div class="d3-hero-main reveal">
+        <div class="panel d3-hero-panel">
+          <div class="panel-head">
+            <div class="panel-head-l"><span class="panel-head-dot"></span> hero.tsx</div>
+            <div class="panel-head-r">~/mubashirdesign</div>
+          </div>
+          <div class="d3-hero-body">
+            <p class="d3-hero-prefix">// Your in-house Shopify team, on demand</p>
+            <h1 class="d3-hero-headline">We build stores that<br/><span class="d3-hero-accent">convert & scale</span></h1>
+            <p class="d3-hero-sub">Custom Shopify development for brands that take ecommerce seriously. No templates. No page builders. Just clean, fast, conversion-optimized code.</p>
+            <div class="d3-hero-actions">
+              <a href="#contact" class="d3-btn-primary">$ start_project</a>
+              <a href="#work" class="d3-btn-ghost">view ./portfolio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d3-hero-rail reveal reveal-delay-2">
+        <div class="panel d3-rail-card">
+          <div class="panel-head">
+            <div class="panel-head-l"><span class="panel-head-dot"></span> status</div>
+          </div>
+          <div class="d3-rail-body">
+            <div class="d3-rail-indicator"></div>
+            <span class="d3-rail-label">Accepting Projects</span>
+            <span class="d3-rail-detail">Reach out to get started</span>
+          </div>
+        </div>
+
+        <div class="panel d3-rail-card">
+          <div class="panel-head">
+            <div class="panel-head-l"><span class="panel-head-dot"></span> feed</div>
+          </div>
+          <div class="d3-rail-body d3-feed">
+            <div class="d3-feed-item"><span class="d3-feed-dot"></span> Deployed clearimageautomotive.com</div>
+            <div class="d3-feed-item"><span class="d3-feed-dot"></span> Merged PR #142 — cart upsell</div>
+            <div class="d3-feed-item"><span class="d3-feed-dot"></span> Sprint 4 complete for ISSCA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ticker -->
+    <div class="d3-ticker reveal">
+      <div class="marquee">
+        <div class="marquee-track" style="--mq-speed: 35s;">
+          <div class="marquee-row">
+            {['Shopify', 'Hydrogen', 'Liquid', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'Tailwind', 'Figma', 'Shopify', 'Hydrogen', 'Liquid', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'Tailwind', 'Figma'].map(t => (
+              <span class="d3-ticker-item">{t}</span>
+            ))}
+          </div>
+          <div class="marquee-row">
+            {['Shopify', 'Hydrogen', 'Liquid', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'Tailwind', 'Figma', 'Shopify', 'Hydrogen', 'Liquid', 'React', 'Next.js', 'Node.js', 'TypeScript', 'GraphQL', 'Tailwind', 'Figma'].map(t => (
+              <span class="d3-ticker-item">{t}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="section-head reveal">
+        <div class="section-head-l">
+          <span class="section-id">01</span>
+          <h2 class="section-title">Services</h2>
+        </div>
+        <p class="section-kicker">Everything you need to launch, grow, and scale on Shopify.</p>
+      </div>
+      <div class="d3-services-table">
+        {SERVICES.map((s, i) => (
+          <div class={`d3-service-row reveal reveal-delay-${(i % 4) + 1}`}>
+            <span class="d3-service-tag">{s.tag}</span>
+            <div class="d3-service-info">
+              <h3 class="d3-service-title">{s.title}</h3>
+              <p class="d3-service-desc">{s.desc}</p>
+            </div>
+            <span class="d3-service-arrow">&rarr;</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section class="section" id="work">
+      <div class="section-head reveal">
+        <div class="section-head-l">
+          <span class="section-id">02</span>
+          <h2 class="section-title">Work</h2>
+        </div>
+        <p class="section-kicker">Real projects. Real results. No stock photos.</p>
+      </div>
+      <div class="d3-work-grid">
+        {SITES.map((site, i) => (
+          <a href={`https://${site.url}`} target="_blank" rel="noopener" class={`d3-work-item reveal reveal-delay-${(i % 4) + 1}${i === 0 ? ' d3-work-featured' : ''}`}>
+            <div class="site-preview" style={`background: ${site.color};`}>
+              <div class="site-preview-bar">
+                <span></span><span></span><span></span>
+                <span class="site-preview-url">{site.url}</span>
+              </div>
+              <div class="site-preview-body">
+                <span class="site-preview-logo">{site.name}</span>
+                <div class="site-preview-hero">
+                  <div class="site-preview-line" style="width:70%"></div>
+                  <div class="site-preview-line" style="width:50%"></div>
+                </div>
+                <div class="site-preview-grid">
+                  <div></div><div></div><div></div>
+                </div>
+              </div>
+            </div>
+            <div class="d3-work-meta">
+              <span class="d3-work-name">{site.name}</span>
+              <span class="d3-work-scope">{site.scope}</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" id="process">
+      <div class="section-head reveal">
+        <div class="section-head-l">
+          <span class="section-id">03</span>
+          <h2 class="section-title">Process</h2>
+        </div>
+        <p class="section-kicker">How we go from idea to launched, optimized store.</p>
+      </div>
+      <div class="panel d3-process-panel reveal">
+        <div class="panel-head">
+          <div class="panel-head-l"><span class="panel-head-dot"></span> process.config</div>
+          <div class="panel-head-r">4 phases</div>
+        </div>
+        <div class="d3-process-body">
+          {PROCESS.map((p, i) => (
+            <div class={`d3-process-row reveal reveal-delay-${i + 1}`}>
+              <span class="d3-process-step">{p.step}</span>
+              <div class="d3-process-info">
+                <h3 class="d3-process-title">{p.title}</h3>
+                <p class="d3-process-desc">{p.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Metrics -->
+    <section class="section">
+      <div class="section-head reveal">
+        <div class="section-head-l">
+          <span class="section-id">04</span>
+          <h2 class="section-title">Metrics</h2>
+        </div>
+        <p class="section-kicker">Numbers that speak for themselves.</p>
+      </div>
+      <div class="d3-metrics-grid">
+        {STATS.map((s, i) => (
+          <div class={`panel d3-metric-card reveal reveal-delay-${i + 1}`}>
+            <span class="d3-metric-value">{s.value}</span>
+            <span class="d3-metric-label">{s.label}</span>
+            <span class="d3-metric-sub">{s.sub}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="contact">
+      <div class="section-head reveal">
+        <div class="section-head-l">
+          <span class="section-id">05</span>
+          <h2 class="section-title">Start a Project</h2>
+        </div>
+        <p class="section-kicker">Tell us about your project and we'll get back within 24h.</p>
+      </div>
+      <div class="panel d3-cta-panel reveal">
+        <div class="panel-head">
+          <div class="panel-head-l"><span class="panel-head-dot"></span> new_project.sh</div>
+          <div class="panel-head-r">form</div>
+        </div>
+        <div class="d3-cta-body">
+          <form action="https://api.web3forms.com/submit" method="POST" class="d3-cta-form">
+            <!-- Get your access key at web3forms.com with msbmubashir@gmail.com -->
+            <input type="hidden" name="access_key" value="5c224745-f444-4ebd-a65e-5985e3f2d18a" />
+            <input type="hidden" name="redirect" value="https://mubashirdesign.com" />
+            <div class="d3-form-row">
+              <div class="d3-form-group">
+                <label>name</label>
+                <input type="text" name="name" placeholder="Your name" required />
+              </div>
+              <div class="d3-form-group">
+                <label>email</label>
+                <input type="email" name="email" placeholder="you@company.com" required />
+              </div>
+            </div>
+            <div class="d3-form-group">
+              <label>message</label>
+              <textarea name="message" rows="4" placeholder="Tell us about your project..." required></textarea>
+            </div>
+            <button type="submit" class="d3-btn-primary">$ submit --send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  /* Topbar */
+  .d3-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 24px;
+    font-size: 11px;
+    color: var(--ink-dim);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    z-index: 1;
+  }
+  .d3-topbar-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .d3-topbar-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 6px rgba(74, 222, 128, 0.5);
+    display: inline-block;
+  }
+  .d3-topbar-clock {
+    font-family: var(--mono);
+    font-size: 10.5px;
+  }
+
+  /* Hero */
+  .d3-hero {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .d3-hero-panel { overflow: visible; }
+  .d3-hero-body { padding: 32px; }
+  .d3-hero-prefix {
+    font-size: 12px;
+    color: var(--ink-dim);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+  .d3-hero-headline {
+    font-family: var(--sans);
+    font-size: 48px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+  .d3-hero-accent {
+    color: var(--accent-soft);
+  }
+  .d3-hero-sub {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 28px;
+  }
+  .d3-hero-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  /* Buttons */
+  .d3-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: var(--mono);
+    font-weight: 500;
+    transition: background 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .d3-btn-primary:hover { background: var(--accent-deep); }
+  .d3-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid var(--rule-strong);
+    color: var(--ink-soft);
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: var(--mono);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .d3-btn-ghost:hover { border-color: var(--accent); color: var(--ink); }
+
+  /* Hero Rail */
+  .d3-hero-rail {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .d3-rail-body {
+    padding: 16px;
+  }
+  .d3-rail-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+    margin-bottom: 8px;
+  }
+  .d3-rail-label {
+    display: block;
+    font-size: 13px;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .d3-rail-detail {
+    font-size: 11px;
+    color: var(--ink-dim);
+  }
+  .d3-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .d3-feed-item {
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .d3-feed-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* Ticker */
+  .d3-ticker {
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    position: relative;
+    z-index: 1;
+  }
+  .d3-ticker-item {
+    font-size: 12px;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* Services */
+  .d3-services-table {
+    display: flex;
+    flex-direction: column;
+  }
+  .d3-service-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 40px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 20px;
+    transition: background 0.2s;
+  }
+  .d3-service-row:hover {
+    background: var(--bg-panel);
+  }
+  .d3-service-tag {
+    font-size: 10.5px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    font-family: var(--mono);
+  }
+  .d3-service-title {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .d3-service-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin: 0;
+  }
+  .d3-service-arrow {
+    color: var(--ink-dim);
+    font-size: 16px;
+    text-align: right;
+  }
+
+  /* Work Grid */
+  .d3-work-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .d3-work-featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  .d3-work-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s;
+  }
+  .d3-work-item:hover { transform: translateY(-4px); }
+  .d3-work-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11.5px;
+  }
+  .d3-work-name { color: var(--ink); font-weight: 500; }
+  .d3-work-scope { color: var(--ink-dim); }
+
+  /* Process */
+  .d3-process-panel { overflow: visible; }
+  .d3-process-body { padding: 0; }
+  .d3-process-row {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    padding: 24px 24px;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .d3-process-row:last-child { border-bottom: none; }
+  .d3-process-step {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--accent);
+    font-family: var(--mono);
+  }
+  .d3-process-title {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 0 6px;
+  }
+  .d3-process-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Metrics */
+  .d3-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .d3-metric-card {
+    padding: 28px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .d3-metric-value {
+    font-family: var(--sans);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .d3-metric-label {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+  .d3-metric-sub {
+    font-size: 10.5px;
+    color: var(--ink-dim);
+  }
+
+  /* CTA / Contact Form */
+  .d3-cta-panel { max-width: 700px; }
+  .d3-cta-body { padding: 28px; }
+  .d3-cta-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .d3-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .d3-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .d3-form-group label {
+    font-size: 11px;
+    color: var(--ink-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .d3-form-group input,
+  .d3-form-group textarea {
+    background: var(--bg);
+    border: 1px solid var(--rule-strong);
+    border-radius: 4px;
+    padding: 10px 14px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink);
+    resize: vertical;
+    transition: border-color 0.2s;
+  }
+  .d3-form-group input:focus,
+  .d3-form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .d3-form-group input::placeholder,
+  .d3-form-group textarea::placeholder {
+    color: var(--ink-dim);
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .d3-hero {
+      grid-template-columns: 1fr;
+      padding-top: 24px;
+    }
+    .d3-hero-headline { font-size: 32px; }
+    .d3-hero-rail { display: none; }
+    .d3-service-row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    .d3-service-tag { order: -1; }
+    .d3-service-arrow { display: none; }
+    .d3-work-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .d3-work-featured {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .d3-metrics-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .d3-form-row {
+      grid-template-columns: 1fr;
+    }
+    .d3-topbar { padding: 8px 14px; }
+  }
+
+  @media (max-width: 480px) {
+    .d3-work-grid {
+      grid-template-columns: 1fr;
+    }
+    .d3-work-featured {
+      grid-column: span 1;
+    }
+    .d3-metrics-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .d3-hero-headline { font-size: 28px; }
+    .d3-hero-actions { flex-direction: column; }
+  }
+</style>
+
+<script>
+  // UTC Clock
+  function updateClock() {
+    const el = document.getElementById('utc-clock');
+    if (!el) return;
+    const now = new Date();
+    el.textContent = now.toUTCString().slice(-12, -4) + ' UTC';
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    const key = e.key.toLowerCase();
+    if (key === 's') document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+    if (key === 'w') document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+    if (key === 'p') document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' });
+    if (key === 'c') document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  });
+</script>

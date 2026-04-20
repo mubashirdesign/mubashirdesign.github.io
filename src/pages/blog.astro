@@ -1,0 +1,241 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const articles = [
+  { cat: 'Shopify', title: 'Applying Discounts Based on Customer Tags', date: 'Jan 10, 2020', time: '8 min', excerpt: 'Learn how to use Shopify Script Editor to create dynamic discounts based on customer tags and segments.' },
+  { cat: 'DevOps', title: 'Setting Up CI/CD for Shopify Themes', date: 'Dec 28, 2019', time: '10 min', excerpt: 'Automate your Shopify theme deployment pipeline with Azure DevOps and ThemeKit CLI.' },
+  { cat: 'Performance', title: 'Optimizing Shopify Store Speed', date: 'Mar 15, 2026', time: '7 min', excerpt: "Practical tips to improve your Shopify store's Core Web Vitals and loading performance." },
+  { cat: 'Headless', title: 'When to Choose Hydrogen for Your Store', date: 'Feb 20, 2026', time: '9 min', excerpt: 'A decision framework for choosing between Liquid themes and headless Hydrogen builds.' },
+  { cat: 'International', title: 'Shopify Markets: Going International', date: 'Jan 5, 2026', time: '6 min', excerpt: 'How to set up multi-currency, multi-language stores with Shopify Markets.' },
+  { cat: 'Development', title: 'Building Custom Shopify Apps with Remix', date: 'Mar 1, 2026', time: '11 min', excerpt: 'Step-by-step guide to building Shopify apps using the Remix framework and App Bridge.' },
+];
+---
+
+<Layout title="Blog & Insights | Mubashir Design">
+  <section class="page-header">
+    <div class="container">
+      <h1>Blog & Insights</h1>
+      <p>Tips, tutorials, and insights on Shopify development and ecommerce growth</p>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <div class="featured-card card">
+        <div class="featured-image">
+          <span class="featured-badge">Featured</span>
+        </div>
+        <div class="featured-content">
+          <span class="article-cat">Shopify</span>
+          <h2>The Complete Guide to Shopify Hydrogen in 2026</h2>
+          <p class="featured-meta">Mubashir Cheentavida &middot; April 8, 2026 &middot; 12 min read</p>
+          <p class="featured-excerpt">
+            Everything you need to know about building headless Shopify stores with Hydrogen —
+            from setup and data fetching to deployment on Oxygen.
+          </p>
+          <a href="#" class="read-link">Read Article &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="articles">
+    <div class="container">
+      <div class="articles-grid">
+        {articles.map(a => (
+          <div class="article-card card">
+            <div class="article-image"></div>
+            <div class="article-body">
+              <span class="article-cat">{a.cat}</span>
+              <h3>{a.title}</h3>
+              <p class="article-meta">{a.date} &middot; {a.time} read</p>
+              <p class="article-excerpt">{a.excerpt}</p>
+              <a href="#" class="read-link">Read More &rarr;</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container" style="text-align:center">
+      <h2>Stay Updated</h2>
+      <p>Get the latest Shopify tips and ecommerce insights delivered to your inbox.</p>
+      <form class="newsletter-form" action="#" method="POST">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--gradient-purple);
+    padding: 140px 0 80px;
+  }
+  .page-header h1 { font-size: 5.2rem; margin-bottom: 1.2rem; }
+  .page-header p { font-size: 1.8rem; color: var(--light-gray); }
+
+  /* Featured */
+  .featured {
+    background: var(--navy);
+    padding: 60px 0;
+  }
+
+  .featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--dark-bg);
+    overflow: hidden;
+  }
+
+  .featured-image {
+    min-height: 300px;
+    background: linear-gradient(135deg, #282c5a, #1c2049);
+    position: relative;
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--cyan);
+    color: var(--dark-bg);
+    font-size: 1.1rem;
+    font-weight: 400;
+    padding: 0.4rem 1.2rem;
+    border-radius: var(--radius-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+
+  .featured-content {
+    padding: 4rem;
+  }
+
+  .article-cat {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--cyan);
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .featured-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .featured-meta {
+    font-size: 1.3rem;
+    color: var(--muted-purple);
+    margin-bottom: 1.6rem;
+  }
+
+  .featured-excerpt {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .read-link {
+    font-size: 1.5rem;
+    color: var(--cyan);
+    font-weight: 400;
+  }
+
+  /* Articles */
+  .articles {
+    background: var(--dark-bg);
+    padding: var(--section-padding);
+  }
+
+  .articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+  }
+
+  .article-image {
+    height: 180px;
+    background: linear-gradient(135deg, #282c5a, #1c2049);
+  }
+
+  .article-body {
+    padding: 2.4rem;
+  }
+
+  .article-body h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .article-meta {
+    font-size: 1.2rem;
+    color: var(--muted-purple);
+    margin-bottom: 1.2rem;
+  }
+
+  .article-excerpt {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    background: var(--navy);
+    padding: var(--section-padding);
+  }
+
+  .newsletter h2 { margin-bottom: 1rem; }
+  .newsletter > .container > p { font-size: 1.5rem; margin-bottom: 2.4rem; }
+
+  .newsletter-form {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .newsletter-form input {
+    flex: 1;
+    padding: 1.4rem 2rem;
+    font-family: var(--font-primary);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--white);
+    background: var(--dark-bg);
+    border: 1px solid rgba(106, 54, 217, 0.3);
+    border-radius: var(--radius-sm);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .newsletter-form input::placeholder {
+    color: #505480;
+  }
+
+  .newsletter-form .btn {
+    white-space: nowrap;
+  }
+
+  @media (max-width: 989px) {
+    .featured-card { grid-template-columns: 1fr; }
+    .articles-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 749px) {
+    .page-header { padding: 110px 0 50px; }
+    .page-header h1 { font-size: 3.6rem; }
+    .featured, .articles, .newsletter { padding: var(--section-padding-mobile); }
+    .articles-grid { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+  }
+</style>

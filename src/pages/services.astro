@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    num: '01',
+    title: 'Shopify Store Development',
+    desc: 'We build custom Shopify stores from the ground up. From theme development to store configuration, we handle every detail to create a seamless shopping experience.',
+    items: ['Custom Theme Development', 'Shopify Plus', 'Headless Commerce (Hydrogen)', 'Store Migration', 'Multi-language & Multi-currency'],
+  },
+  {
+    num: '02',
+    title: 'App Development & Integrations',
+    desc: 'We connect your Shopify store with the tools your business relies on. Custom app development, ERP integrations, payment gateways, and workflow automation.',
+    items: ['Custom Shopify Apps', 'API Integrations', 'Payment Solutions', 'Inventory Management', 'Workflow Automation'],
+  },
+  {
+    num: '03',
+    title: 'UX Design & Branding',
+    desc: 'Conversion-focused design that reflects your brand and delights your customers. We combine aesthetics with data-driven decisions.',
+    items: ['UI/UX Design', 'Brand Identity', 'Responsive Design', 'Conversion Rate Optimization', 'A/B Testing'],
+  },
+  {
+    num: '04',
+    title: 'Ongoing Support & Growth',
+    desc: "We don't just launch and leave. Our team provides continuous support, performance optimization, and growth strategy.",
+    items: ['24/7 Support', 'Performance Monitoring', 'SEO Optimization', 'Analytics & Reporting', 'Speed Optimization'],
+  },
+];
+
+const steps = [
+  { num: '01', title: 'Discovery', desc: 'Understanding your business, goals, and target audience' },
+  { num: '02', title: 'Design', desc: 'Wireframes, prototypes, and visual design tailored to your brand' },
+  { num: '03', title: 'Develop', desc: 'Clean, performant code built on Shopify best practices' },
+  { num: '04', title: 'Deploy', desc: 'Launch, QA, training, and ongoing optimization' },
+];
+---
+
+<Layout title="Services | Mubashir Design">
+  <section class="page-header">
+    <div class="container">
+      <h1>Our Services</h1>
+      <p>End-to-end Shopify solutions for ambitious brands</p>
+    </div>
+  </section>
+
+  <section class="services-detail">
+    {services.map((s, i) => (
+      <div class:list={['service-row', { reversed: i % 2 !== 0 }]}>
+        <div class="service-text">
+          <span class="service-num">{s.num}</span>
+          <h2>{s.title}</h2>
+          <div class="accent-line"></div>
+          <p>{s.desc}</p>
+          <ul class="service-items">
+            {s.items.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="service-image">
+          <div class="service-placeholder">
+            <div class="placeholder-icon"></div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <p class="section-label" style="text-align:center">How We Work</p>
+      <h2 class="section-title" style="text-align:center">Our Process</h2>
+      <div class="process-timeline">
+        <div class="timeline-line"></div>
+        {steps.map(step => (
+          <div class="process-step">
+            <div class="step-dot"></div>
+            <span class="step-num">{step.num}</span>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container" style="text-align:center">
+      <h2>Let's build something great together</h2>
+      <p>Tell us about your project and we'll get back to you within 24 hours.</p>
+      <a href="/contact" class="btn btn-primary">Get Started</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--gradient-purple);
+    padding: 140px 0 80px;
+  }
+
+  .page-header h1 {
+    font-size: 5.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .page-header p {
+    font-size: 1.8rem;
+    color: var(--light-gray);
+  }
+
+  /* Service rows */
+  .services-detail {
+    padding-top: 2rem;
+  }
+
+  .service-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    padding: 80px;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .service-row:nth-child(odd) {
+    background: var(--dark-bg);
+  }
+
+  .service-row:nth-child(even) {
+    background: var(--navy);
+  }
+
+  .service-row.reversed {
+    direction: rtl;
+  }
+
+  .service-row.reversed > * {
+    direction: ltr;
+  }
+
+  .service-num {
+    font-size: 4.8rem;
+    font-weight: 400;
+    color: rgba(106, 54, 217, 0.35);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .service-text h2 {
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .accent-line {
+    width: 50px;
+    height: 3px;
+    background: var(--cyan);
+    border-radius: 2px;
+    margin-bottom: 1.6rem;
+  }
+
+  .service-text p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .service-items {
+    list-style: none;
+  }
+
+  .service-items li {
+    font-size: 1.4rem;
+    color: var(--muted-purple);
+    font-weight: 400;
+    padding: 0.5rem 0;
+  }
+
+  .service-items li::before {
+    content: '✓  ';
+    color: var(--cyan);
+  }
+
+  .service-image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .service-placeholder {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .service-row:nth-child(odd) .service-placeholder {
+    background: var(--navy);
+  }
+
+  .service-row:nth-child(even) .service-placeholder {
+    background: var(--dark-bg);
+  }
+
+  .placeholder-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-purple);
+    opacity: 0.6;
+  }
+
+  /* Process */
+  .process {
+    background: var(--navy);
+    padding: var(--section-padding);
+  }
+
+  .process-timeline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 12px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: rgba(106, 54, 217, 0.4);
+  }
+
+  .process-step {
+    text-align: center;
+    position: relative;
+  }
+
+  .step-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--cyan);
+    margin: 0 auto 2rem;
+    box-shadow: 0 0 12px rgba(86, 229, 254, 0.4);
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-num {
+    font-size: 1.3rem;
+    color: var(--cyan);
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .process-step h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+  }
+
+  .process-step p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .cta {
+    background: var(--gradient-purple);
+    padding: var(--section-padding);
+  }
+
+  .cta h2 { margin-bottom: 1.2rem; }
+  .cta p { font-size: 1.6rem; margin-bottom: 3rem; }
+
+  @media (max-width: 989px) {
+    .service-row {
+      grid-template-columns: 1fr;
+      padding: 60px 40px;
+      gap: 3rem;
+    }
+    .service-row.reversed { direction: ltr; }
+
+    .process-timeline {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+    .timeline-line { display: none; }
+  }
+
+  @media (max-width: 749px) {
+    .page-header { padding: 110px 0 50px; }
+    .page-header h1 { font-size: 3.6rem; }
+    .service-row { padding: 40px 24px; }
+    .process { padding: var(--section-padding-mobile); }
+    .cta { padding: var(--section-padding-mobile); }
+    .process-timeline { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,108 @@
+---
+---
+
+<nav class="d3-nav">
+  <a href="/" class="d3-nav-logo">
+    <span class="d3-nav-bracket">[</span>
+    <img src="/logo.png" alt="Mubashir Design" class="d3-nav-logo-img" />
+    <span class="d3-nav-bracket">]</span>
+    <span class="d3-nav-caret"></span>
+  </a>
+
+  <div class="d3-nav-links">
+    <a href="#services"><span class="d3-nav-key">S</span> Services</a>
+    <a href="#work"><span class="d3-nav-key">W</span> Work</a>
+    <a href="#process"><span class="d3-nav-key">P</span> Process</a>
+    <a href="#contact"><span class="d3-nav-key">C</span> Contact</a>
+  </div>
+
+  <a href="#contact" class="d3-nav-cta">$ start_project</a>
+</nav>
+
+<style>
+  .d3-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 56px;
+    background: rgba(10, 8, 18, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .d3-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .d3-nav-logo-img {
+    height: 18px;
+    filter: invert(1);
+  }
+
+  .d3-nav-bracket {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .d3-nav-caret {
+    width: 8px;
+    height: 16px;
+    background: var(--accent);
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+  }
+
+  .d3-nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+  }
+
+  .d3-nav-links a:hover {
+    color: var(--ink);
+  }
+
+  .d3-nav-key {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 3px;
+    font-size: 10px;
+    margin-right: 5px;
+    color: var(--ink-dim);
+    vertical-align: middle;
+  }
+
+  .d3-nav-cta {
+    font-size: 12px;
+    padding: 7px 14px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    color: var(--accent);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .d3-nav-cta:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .d3-nav-links { display: none; }
+    .d3-nav { padding: 0 14px; }
+  }
+</style>

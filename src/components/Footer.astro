@@ -1,0 +1,54 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="d3-footer">
+  <div class="d3-footer-inner">
+    <span class="d3-footer-copy">&copy; {year} Mubashir Design</span>
+    <span class="d3-footer-sep">/</span>
+    <span class="d3-footer-detail">Shopify Partners</span>
+    <span class="d3-footer-sep">/</span>
+    <span class="d3-footer-detail">Toronto, Canada</span>
+    <span class="d3-footer-right">mubashirdesign.com</span>
+  </div>
+</footer>
+
+<style>
+  .d3-footer {
+    border-top: 1px solid var(--rule);
+    padding: 20px 24px;
+    font-size: 11.5px;
+    color: var(--ink-dim);
+    position: relative;
+    z-index: 1;
+  }
+
+  .d3-footer-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .d3-footer-copy {
+    color: var(--ink-soft);
+  }
+
+  .d3-footer-sep {
+    opacity: 0.4;
+  }
+
+  .d3-footer-right {
+    margin-left: auto;
+    color: var(--ink-soft);
+    font-family: var(--mono);
+    font-size: 10.5px;
+  }
+
+  @media (max-width: 900px) {
+    .d3-footer { padding: 16px 14px; }
+    .d3-footer-inner { flex-wrap: wrap; gap: 6px; }
+    .d3-footer-right { width: 100%; margin-left: 0; margin-top: 6px; }
+  }
+</style>
